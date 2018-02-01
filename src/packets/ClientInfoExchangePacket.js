@@ -24,6 +24,7 @@ ClientInfoExchangePacket.prototype.write = function (writer) {
   writer._writeByte(0); // Reserved by the protocol.
   writer._writeByte(0); // Reserved by the protocol.
 
+    console.info("ClientInfoExchangePacket ( send ) : " , writer._buffer);
   return writer;
 };
 
@@ -33,6 +34,8 @@ ClientInfoExchangePacket.prototype.write = function (writer) {
  */
 ClientInfoExchangePacket.prototype.parse = function (parser) {
   // (TCP/IP) Port value
+
+    console.info("ClientInfoExchangePacket ( recv )  : " , parser._buffer);
   this.newConnectionPort = parser._parseInt();
 };
 
