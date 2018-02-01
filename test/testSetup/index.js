@@ -6,11 +6,11 @@ const CUBRID = require(rootDir);
 const ConsoleLogger = require(path.join(rootDir, 'src', 'ConsoleLogger'));
 
 const config = {
-  hosts: ['localhost'],
-  port: 33000,
-  user: 'public',
-  password: '',
-  database: 'demodb',
+  hosts: ['10.105.172.145'],
+  port: 30102,
+  user: 'nsight',
+  password: 'ns0)3#ht',
+  database: 'manager_master',
   maxConnectionRetryCount: 1,
   logger: new ConsoleLogger,
 };
