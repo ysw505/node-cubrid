@@ -404,6 +404,7 @@ PacketWriter.prototype._writeFixedLengthString = function (value, fillerValue, f
   this._allocate(fixedLength);
 
   for (let i = 0; i < value.length; i++) {
+
     this._buffer[this._offset++] = value[i].charCodeAt(0);
   }
 

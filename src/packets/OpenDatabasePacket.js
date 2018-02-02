@@ -25,7 +25,13 @@ OpenDatabasePacket.prototype.write = function (writer) {
   writer._writeFiller(512, 0); // Used for extended connection info
   writer._writeFiller(20, 0); // Reserved
 
-  console.info("OpenDatabasePacket ( send ) : " , writer._buffer);
+  console.info("OpenDatabasePacket ( send ) : " , writer._buffer , writer._buffer.length);
+
+  /*for( let i = 0 ; i < 32 ; i++ ) {
+    console.info( "OpenDatabasePacket ( send buffer ) : " , writer._buffer.toJSON().data )
+  }*/
+
+
   return writer;
 };
 
@@ -37,6 +43,7 @@ OpenDatabasePacket.prototype.parse = function (parser) {
 
 
     console.info("OpenDatabasePacket ( recv ) : " , parser._buffer);
+    console.info("OpenDatabasePacket length ( recv ) : " , parser._buffer.length);
 
 
   const logger = this.options.logger;

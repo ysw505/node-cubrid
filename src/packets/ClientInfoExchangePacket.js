@@ -37,6 +37,7 @@ ClientInfoExchangePacket.prototype.parse = function (parser) {
 
     console.info("ClientInfoExchangePacket ( recv )  : " , parser._buffer);
   this.newConnectionPort = parser._parseInt();
+  console.info("ClientInfoExchangePacket NewConnectionPort")
 };
 
 ClientInfoExchangePacket.prototype.getBufferLength = function () {

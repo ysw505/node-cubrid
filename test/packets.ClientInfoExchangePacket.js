@@ -14,6 +14,9 @@ describe('ClientInfoExchangePacket', function () {
 
     clientInfoExchange.write(packetWriter);
 
+    console.info(packetWriter
+        ._buffer.toJSON())
+
     expect(packetWriter
         ._toBuffer()
         .toString('utf8', 0, 5)
