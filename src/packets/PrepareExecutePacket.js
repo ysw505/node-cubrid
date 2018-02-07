@@ -77,6 +77,8 @@ PrepareExecutePacket.prototype.writeExecute = function (writer) {
  * @param parser
  */
 PrepareExecutePacket.prototype.parsePrepare = function (parser) {
+
+  console.info("Parse Prepare" , parser);
   const responseLength = parser._parseInt();
   this.casInfo = parser._parseBytes(DATA_TYPES.CAS_INFO_SIZE);
 

@@ -79,6 +79,7 @@ function parseNum(length) {
 
   this._offset = endIndex;
 
+  console.info("ParseNum " , value)
   return value;
 }
 

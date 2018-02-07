@@ -52,7 +52,7 @@ OpenDatabasePacket.prototype.parse = function (parser) {
 
   this.casInfo = parser._parseBytes(DATA_TYPES.CAS_INFO_SIZE);
 
-  logger.debug('OpenDatabasePacket: casInfo', this.casInfo);
+  console.info('OpenDatabasePacket: casInfo', this.casInfo);
 
   this.responseCode = parser._parseInt();
   
@@ -73,10 +73,10 @@ OpenDatabasePacket.prototype.parse = function (parser) {
   * */
   const brokerInfo = parser._parseBytes(DATA_TYPES.BROKER_INFO_SIZEOF);
 
-  logger.debug('OpenDatabasePacket: brokerInfo', brokerInfo);
+  console.info('OpenDatabasePacket: brokerInfo', brokerInfo);
 
   const protocolVersion = CAS.getProtocolVersion(brokerInfo[4]);
-  logger.debug('OpenDatabasePacket: protocolVersion', protocolVersion);
+  console.info('OpenDatabasePacket: protocolVersion', protocolVersion);
 
   // Freeze the object, i.e. make it immutable.
   this.brokerInfo = Object.freeze({
@@ -87,6 +87,8 @@ OpenDatabasePacket.prototype.parse = function (parser) {
 
   // Unique session ID.
   this.sessionId = parser._parseInt();
+
+  console.info( "OpenDatabasePacket: SessionID " , this.sessionId );
 };
 
 OpenDatabasePacket.prototype.getBufferLength = function () {

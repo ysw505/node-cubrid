@@ -208,6 +208,7 @@ function _doGetBrokerPort() {
 
       const newPort = clientInfoExchangePacket.newConnectionPort;
 
+      console.info(`_doGetBrokerPort: newPort = ${newPort}`);
       this.logger.debug(`_doGetBrokerPort: newPort = ${newPort}`);
 
       this.connectionBrokerPort = newPort;
@@ -309,6 +310,7 @@ function _setSocketTimeoutErrorListeners(callback) {
  */
 function _doDatabaseLogin() {
   this.logger.debug(`_doDatabaseLogin: connectionBrokerPort = ${this.connectionBrokerPort}`);
+  console.info(`_doDatabaseLogin: connectionBrokerPort = ${this.connectionBrokerPort}`);
 
   return new Promise((resolve, reject) => {
     let socket;
